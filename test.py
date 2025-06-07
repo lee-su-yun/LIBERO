@@ -32,6 +32,7 @@ env.set_init_state(init_states[init_state_id])
 
 dummy_action = [0.] * 7
 for step in range(10):
-    print(f'step :{step}')
+    print(f'step :{step}\n')
     obs, reward, done, info = env.step(dummy_action)
+    print(f'obs:{obs}, reward:{reward}, done:{done}, info:{info}')
 env.close()
