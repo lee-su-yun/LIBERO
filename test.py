@@ -40,7 +40,7 @@ for step in range(10):
     print(f'step :{step}\n')
     obs, reward, done, info = env.step(dummy_action)
     print(obs.key())
-    img = obs["agentview_rgb"]
-    Image.fromarray(img).save("frame0.png")
+    img = obs["agentview_image"]
+    Image.fromarray(img).save(f"/home/sylee/codes/LIBERO/test_image/frame{step}.png")
     #print(f'obs:{obs}, reward:{reward}, done:{done}, info:{info}')
 env.close()
