@@ -2,6 +2,11 @@ from libero.libero import benchmark, get_libero_path
 from libero.libero.envs import OffScreenRenderEnv
 import os
 
+from PIL import Image
+import imageio
+
+
+
 
 
 benchmark_dict = benchmark.get_benchmark_dict()
@@ -34,5 +39,8 @@ dummy_action = [0.] * 7
 for step in range(10):
     print(f'step :{step}\n')
     obs, reward, done, info = env.step(dummy_action)
-    print(f'obs:{obs}, reward:{reward}, done:{done}, info:{info}')
+    print(obs.key())
+    img = obs["agentview_rgb"]
+    Image.fromarray(img).save("frame0.png")
+    #print(f'obs:{obs}, reward:{reward}, done:{done}, info:{info}')
 env.close()
