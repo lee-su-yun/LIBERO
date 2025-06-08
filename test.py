@@ -14,7 +14,7 @@ task_suite_name = "libero_10" # can also choose libero_spatial, libero_object, e
 task_suite = benchmark_dict[task_suite_name]()
 
 # retrieve a specific task
-task_id = 0
+task_id = 1
 task = task_suite.get_task(task_id)
 task_name = task.name
 task_description = task.language
